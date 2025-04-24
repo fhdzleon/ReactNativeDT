@@ -1,18 +1,13 @@
-interface UserRowProps {
-  img: string;
-  name: string;
-  lastname: string;
-  email: string;
-}
+import { User } from "../interfaces/reqres.response";
 
-const UserRow = ({ img, name, lastname, email }: UserRowProps) => {
+const UserRow = ({ avatar, first_name, last_name, email }: User) => {
   return (
     <tr>
       <td>
-        <img src={img} className="rounded-b-full w-14" alt="Avatar" />
+        <img src={avatar} className="rounded-b-full w-14 p-2" alt="Avatar" />
       </td>
       <td>
-        {name} {lastname}
+        {first_name} {last_name}
       </td>
       <td>{email}</td>
     </tr>

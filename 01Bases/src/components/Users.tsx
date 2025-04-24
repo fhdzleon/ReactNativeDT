@@ -2,7 +2,7 @@ import useUsers from "../hooks/useUsers";
 import UserRow from "./UserRow";
 
 const Users = () => {
-  const { users } = useUsers();
+  const { users, nextPage, prevPage } = useUsers();
 
   console.log(users);
 
@@ -19,31 +19,28 @@ const Users = () => {
         </thead>
 
         <tbody>
-          <UserRow
-            img="imagen"
-            name="Felipe"
-            lastname="Hernandez"
-            email="felipe@mail.com"
-          />
-          <UserRow
-            img="imagen"
-            name="Karla"
-            lastname="Zarazua"
-            email="karla@mail.com"
-          />
-          <UserRow
-            img="imagen"
-            name="Zoe Abigail"
-            lastname="Hernandez"
-            email="zoe@mail.com"
-          />
+          {users.map((user) => (
+            <UserRow
+              avatar={user.avatar}
+              first_name={user.first_name}
+              last_name={user.last_name}
+              email={user.email}
+            />
+          ))}
         </tbody>
       </table>
 
       <div className="flex justify-between mt-5 items-center">
-        <button className="p-2 bg-blue-500 rounded-2xl">Anterior</button>
+        <button
+          onClick={prevPage}
+          className="p-2 cursor-pointer bg-blue-500 rounded-2xl"
+        >
+          Anterior
+        </button>
         <span>Pagina</span>
-        <button className="p-2 bg-blue-500 rounded-2xl">Siguiente</button>
+        <button onClick={nextPage} className="p-2 bg-blue-500 rounded-2xl">
+          Siguiente
+        </button>
       </div>
     </div>
   );

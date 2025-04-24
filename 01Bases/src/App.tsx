@@ -3,9 +3,10 @@
 /* import BasicFunctions from "./typecsript/BasicFunctions"; */
 /* import Counter from "./components/counter"; */
 /* import Login from "./components/login"; */
-import Users from "./components/Users";
+/* import Users from "./components/Users"; */
 
 import "./App.css";
+import FormPage from "./components/FormPage";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         {/* <BasicFunctions /> */}
         {/*  <Counter /> */}
         {/* <Login /> */}
-        <Users />
+        {/* <Users /> */}
+        <FormPage />
       </>
     </AuthProvider>
   );
